@@ -30,13 +30,40 @@
     <title>Pokemon</title>
   </head>
   <body>
-    <p>Quantos pokémons o Ash apanhou?</p>
-    <p id="ashPokemons">0</p>
-    <input id="input" autofocus />
-    <button id="button" type="button">Enviar</button>
-
-    <ul id="list"></ul>
-
+    <div class="container">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Pokemon</h1>
+          <p class="lead">Catching them through the map</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p>Quantos pokémons o Ash apanhou?</p>
+        </div>
+        <div class="col">
+          <p id="ashPokemons">0</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="input-group flex-nowrap">
+            <input
+              placeholder="Write all commands e.g. NSOOE"
+              class="form-control"
+              id="input"
+              autofocus
+            />
+          </div>
+        </div>
+        <div class="col">
+          <button class="btn btn-primary" id="button" type="button">
+            Enviar
+          </button>
+        </div>
+      </div>
+      <ul id="list"></ul>
+    </div>
     <script src="./js/pokemon.js"></script>
   </body>
 </html>
