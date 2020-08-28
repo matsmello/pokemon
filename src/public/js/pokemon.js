@@ -40,6 +40,10 @@ const moveAsh = (moves = []) => {
   moves.forEach((move) => {
     // Create a <li> node
     const node = document.createElement("li");
+
+    // Add bootstrap class
+    node.className = "list-group-item";
+
     const initialText = `${move} - Atual position: (${x},${y})`;
     try {
       movements[move]();
