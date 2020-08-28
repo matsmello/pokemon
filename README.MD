@@ -10,10 +10,16 @@
 ### 🚀 How to run ?
 
 ```sh
+  # Install dependencies
+  yarn
 
-  yarn/npm
-  yarn/npm start
+  # Run local server
+  yarn start
+
+  # Verify basic html structure page with Jest
   yarn test
+
+  # Verify test workflow using cypress
   yarn run cypress open
 
 ```
