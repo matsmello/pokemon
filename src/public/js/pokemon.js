@@ -30,28 +30,35 @@ button.addEventListener("click", () => {
     const moves = input.value.toUpperCase().split("");
     pokemonsSet.add(`${x},${y}`);
 
-    moves.forEach((move) => {
-      // Create a <li> node
-      const node = document.createElement("li");
-      const initialText = `${move} - Atual position: (${x},${y})`;
-      try {
-        movements[move]();
-        pokemonsSet.add(`${x},${y}`);
+    const totalPokemons = moveAsh(moves);
 
-        const nextText = ` - Next position: (${x},${y})`;
-
-        // Create a text node
-        const textNode = document.createTextNode(`${initialText}${nextText}`);
-
-        // Append the text to <li>
-        node.appendChild(textNode);
-
-        // Append <li> to <ul> with id="list"
-        list.appendChild(node);
-      } catch (error) {
-        console.log(`Invalid movement: ${move}`);
-      }
-    });
-    ashPokemons.innerHTML = pokemonsSet.size;
+    ashPokemons.innerHTML = totalPokemons;
   }
 });
+
+const moveAsh = (moves = []) => {
+  moves.forEach((move) => {
+    // Create a <li> node
+    const node = document.createElement("li");
+    const initialText = `${move} - Atual position: (${x},${y})`;
+    try {
+      movements[move]();
+      pokemonsSet.add(`${x},${y}`);
+
+      const nextText = ` - Next position: (${x},${y})`;
+
+      // Create a text node
+      const textNode = document.createTextNode(`${initialText}${nextText}`);
+
+      // Append the text to <li>
+      node.appendChild(textNode);
+
+      // Append <li> to <ul> with id="list"
+      list.appendChild(node);
+    } catch (error) {
+      console.log(`Invalid movement: ${move}`);
+    }
+  });
+
+  return pokemonsSet.size;
+};
